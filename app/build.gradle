@@ -5,6 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.daggerdemo"
+        multiDexEnabled true
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
@@ -26,4 +27,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api 'com.google.dagger:dagger:2.25.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.25.2'
+    implementation 'com.android.support:multidex:1.0.3'
 }
