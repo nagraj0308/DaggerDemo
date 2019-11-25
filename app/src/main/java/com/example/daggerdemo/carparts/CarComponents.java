@@ -9,4 +9,5 @@ import dagger.Component;
 public interface CarComponents {
  Car getCar();
  void inject(MainActivity mainActivity);
+
 }
