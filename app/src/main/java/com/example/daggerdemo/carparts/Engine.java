@@ -1,10 +1,5 @@
 package com.example.daggerdemo.carparts;
 
-import javax.inject.Inject;
-
-public class Engine {
-   @Inject
-    Engine(){
-
-    }
+public interface Engine {
+   void start();
 }
