@@ -21,6 +21,7 @@ public class Car {
         textView.setText("Car is starting...");
     }
     void driveCar(TextView textView){
+        engine.start();
         textView.setText("Car is driving...");
     }
 
