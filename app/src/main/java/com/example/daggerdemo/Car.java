@@ -17,10 +17,10 @@ public class Car {
         this.engine = engine;
         this.wheels = wheels;
     }
-    public void startCar(TextView textView){
+    void startCar(TextView textView){
         textView.setText("Car is starting...");
     }
-    public void driveCar(TextView textView){
+    void driveCar(TextView textView){
         textView.setText("Car is driving...");
     }
 
