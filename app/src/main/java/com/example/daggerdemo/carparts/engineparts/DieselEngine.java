@@ -4,15 +4,13 @@ import android.util.Log;
 
 import com.example.daggerdemo.carparts.Engine;
 
-import javax.inject.Inject;
-
 public class DieselEngine implements Engine {
-    @Inject public DieselEngine(){
-
-
+    private int horsePower;
+    public DieselEngine(int horsePower){
+        this.horsePower=horsePower;
     }
     @Override
     public void start() {
-        Log.e("MSG","Diesel engine started...");
+        Log.e("MSG","Diesel engine started...HorsePower: "+horsePower);
     }
 }
