@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.example.daggerdemo.carparts.CarComponents;
 import com.example.daggerdemo.carparts.DaggerCarComponents;
+import com.example.daggerdemo.carparts.engineparts.DieselEngineModule;
 
 import javax.inject.Inject;
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         tvStart=findViewById(R.id.tv_start);
         tvDrive=findViewById(R.id.tv_drive);
 
-        carComponent= DaggerCarComponents.create();
+        carComponent= DaggerCarComponents.builder().dieselEngineModule(new DieselEngineModule(100)).build();
         carComponent.inject(this);
 
         car.startCar(tvStart);
