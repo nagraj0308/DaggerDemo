@@ -6,6 +6,7 @@ import dagger.Binds;
 import dagger.Module;
 
 @Module
-public abstract class PetrolEngineModule {
-    @Binds abstract Engine bindEngine(PetrolEngine engine);
+public abstract class DieselEngineModule {
+    @Binds
+    abstract Engine bindEngine(DieselEngine engine);
 }
