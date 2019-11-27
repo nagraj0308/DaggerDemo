@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.daggerdemo.carparts.ActivityComponent;
-import com.example.daggerdemo.carparts.DaggerActivityComponent;
+import com.example.daggerdemo.carparts.engineparts.DieselEngineModule;
+
 
 import javax.inject.Inject;
 
@@ -22,12 +23,8 @@ public class MainActivity extends AppCompatActivity {
         tvStart=findViewById(R.id.tv_start);
         tvDrive=findViewById(R.id.tv_drive);
 
-        activityComponent= DaggerActivityComponent.builder()
-                .horsePower(200)
-                .engineCapacity(400)
-                .appComponent(((ExampleApp)getApplication()).getComponent())
-                .build();
-        activityComponent.inject(this);
+       activityComponent=((ExampleApp)getApplication()).getComponent().getActivityComponent(new DieselEngineModule(120));
+       activityComponent.inject(this);
 
         tvStart.setText("Tv Start");
         tvDrive.setText("Tv Drive");
