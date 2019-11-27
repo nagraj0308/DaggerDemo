@@ -28,7 +28,7 @@ public class Car {
 
     void driveCar() {
         engine.start();
-        Log.e("MSG", driver + "is driving " + this);
+        Log.e("MSG", driver +" "+driver.getDriverName()+ "is driving " + this);
     }
 
     @Inject

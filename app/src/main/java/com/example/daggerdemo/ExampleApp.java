@@ -2,6 +2,7 @@ package com.example.daggerdemo;
 
 import android.app.Application;
 
+import com.example.daggerdemo.carparts.driverparts.DriverModule;
 
 
 public class ExampleApp extends Application {
@@ -10,7 +11,7 @@ public class ExampleApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        component = DaggerAppComponent.create();
+        component =DaggerAppComponent.factory().create(new DriverModule("Prateek"));
     }
 
     public AppComponent getComponent() {
