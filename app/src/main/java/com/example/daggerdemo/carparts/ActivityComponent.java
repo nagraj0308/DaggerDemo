@@ -1,19 +1,19 @@
 package com.example.daggerdemo.carparts;
 
+import com.example.daggerdemo.AppComponent;
 import com.example.daggerdemo.Car;
 import com.example.daggerdemo.MainActivity;
-import com.example.daggerdemo.carparts.engineparts.DieselEngineModule;
+import com.example.daggerdemo.PerActivity;
 import com.example.daggerdemo.carparts.engineparts.PetrolEngineModule;
 import com.example.daggerdemo.carparts.wheelparts.WheelModule;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-@Singleton
-@Component(modules = {WheelModule.class, PetrolEngineModule.class})
-public interface CarComponents {
+@PerActivity
+@Component(dependencies = AppComponent.class,modules = {WheelModule.class, PetrolEngineModule.class})
+public interface ActivityComponent {
     Car getCar();
 
     void inject(MainActivity mainActivity);
@@ -25,7 +25,9 @@ public interface CarComponents {
         @BindsInstance
         Builder engineCapacity(@Named("engine capacity") int engineCapacity);
 
-        CarComponents build();
+        Builder appComponent(AppComponent appComponent);
+
+        ActivityComponent build();
     }
 
 }

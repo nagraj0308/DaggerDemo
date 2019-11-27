@@ -9,7 +9,7 @@ import com.example.daggerdemo.carparts.Remote;
 import com.example.daggerdemo.carparts.Wheels;
 
 import javax.inject.Inject;
-
+@PerActivity
 public class Car {
     Engine engine;
     Wheels wheels;
