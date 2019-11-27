@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvStart,tvDrive;
-    @Inject Car car;
+    @Inject Car car1,car2;
     CarComponents carComponent;
 
     @Override
@@ -26,8 +26,13 @@ public class MainActivity extends AppCompatActivity {
         carComponent= DaggerCarComponents.builder().horsePower(200).engineCapacity(800).build();
         carComponent.inject(this);
 
-        car.startCar(tvStart);
-        car.driveCar(tvDrive);
+
+
+
+        tvStart.setText("Tv Start");
+        tvDrive.setText("Tv Drive");
+        car1.driveCar();
+        car2.driveCar();
 
 
     }
