@@ -23,11 +23,8 @@ public class MainActivity extends AppCompatActivity {
         tvStart=findViewById(R.id.tv_start);
         tvDrive=findViewById(R.id.tv_drive);
 
-        carComponent= DaggerCarComponents.builder().horsePower(200).engineCapacity(800).build();
+        carComponent= ((ExampleApp)getApplication()).getCarComponents();
         carComponent.inject(this);
-
-
-
 
         tvStart.setText("Tv Start");
         tvDrive.setText("Tv Drive");
