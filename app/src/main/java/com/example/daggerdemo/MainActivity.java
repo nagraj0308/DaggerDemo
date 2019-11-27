@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         tvStart=findViewById(R.id.tv_start);
         tvDrive=findViewById(R.id.tv_drive);
 
-       activityComponent=((ExampleApp)getApplication()).getComponent().getActivityComponent(new DieselEngineModule(120));
+       activityComponent=((ExampleApp)getApplication()).getComponent().getActivityComponentBuilder().horsePower(100).engineCapacity(200).build();
        activityComponent.inject(this);
 
         tvStart.setText("Tv Start");
