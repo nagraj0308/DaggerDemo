@@ -8,7 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class DriverModule {
+public abstract class DriverModule {
     @Provides
     @Singleton
     static Driver provideDriver(){
