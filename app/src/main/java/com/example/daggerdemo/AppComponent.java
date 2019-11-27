@@ -2,7 +2,6 @@ package com.example.daggerdemo;
 
 import com.example.daggerdemo.carparts.ActivityComponent;
 import com.example.daggerdemo.carparts.driverparts.DriverModule;
-import com.example.daggerdemo.carparts.engineparts.DieselEngineModule;
 
 import javax.inject.Singleton;
 
